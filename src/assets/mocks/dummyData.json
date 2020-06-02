@@ -1,0 +1,22 @@
+[{
+  "inputIP": "192.168.1.1",
+  "mod": "mod1",
+  "num": "num1",
+  "ver": "0.1",
+  "lang": "english",
+  "features": [
+    {
+      "id": 1,
+      "feature": "feature1",
+      "description": "description1",
+      "container": "container1",
+      "license": "license1"
+    }, {
+      "id": 2,
+      "feature": "feature2",
+      "description": "description2",
+      "container": "container2",
+      "license": "license2"
+    }
+  ]
+}]

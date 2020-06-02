@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
+## Useful link
+* [Creating a Dynamic Checkbox List in Angular](https://coryrylan.com/blog/creating-a-dynamic-checkbox-list-in-angular)
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

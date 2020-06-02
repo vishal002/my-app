@@ -1,0 +1,120 @@
+<div class="container-fluid">
+  <div class="row">
+    <div id="wrapper">
+      <nav class="navbar navbar-default navbar-cls-top" role="navigation" style="margin-bottom:0">
+        <div class="navbar-header">
+          <a class="navbar-brand" routerLink="/home">Placeholder</a>
+        </div>
+      </nav>
+
+      <nav class="navbar-default navbar-side" role="navigation">
+        <div clas="sidebar-collapse">
+          <ul class="nav" id="main-menu">
+            <li>
+              <a routerLink="/home" routerLinkActive="active-menu"><i class="fa fa-dashboard"></i>Dashboard</a>
+            </li>
+            <li>
+              <a routerLink="/home" routerLinkActive="active-menu"><i class="fa fa-dashboard"></i>Admin</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div id="page-wrapper">
+        <div id="page-inner">
+          <form [formGroup]="homeForm" (submit)="submitForm()">
+            <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <div class="panel panel-danger">
+                <div class="panel-heading">
+                  Configuration
+                </div>
+                <div class="panel-body">
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputIP">IP</label>
+                        <input type="text" class="form-control" id="InputIP"
+                               formControlName="inputIP">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="mod">Mod</label>
+                        <select id="mod" class="form-control" formControlName="mod">
+                          <option value="mod1">Mod1</option>
+                          <option value="mod2">Mod2</option>
+                          <option value="mod3">Mod3</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="num">Number</label>
+                        <input type="text" class="form-control" id="num" formControlName="num">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="ver">Version</label>
+                        <select id="ver" class="form-control" formControlName="ver">
+                          <option value="0.1">0.1</option>
+                          <option value="0.2">0.2</option>
+                          <option value="0.3">0.3</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="lang">Language</label>
+                        <select id="lang" class="form-control" formControlName="lang">
+                          <option value="english">English</option>
+                          <option value="spanish">Spanish</option>
+                          <option value="french">French</option>
+                        </select>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="row">
+            <div class="col-md-12">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  Select features
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr>
+                      <th><input type="checkbox" value=""></th>
+                      <th>Feature</th>
+                      <th>Description</th>
+                      <th>Container</th>
+                      <th>License</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr formArrayName="features" *ngFor="let feature of homeForm.get('features')['controls']; let i=index;">
+                      <td><input type="checkbox" [formControlName]="i"></td>
+                      <td>{{featuresData[i].feature}}</td>
+                      <td>{{featuresData[i].description}}</td>
+                      <td>{{featuresData[i].container}}</td>
+                      <td>{{featuresData[i].license}}</td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="form-row text-center">
+              <button type="submit" class="btn btn-primary btn-lg">Download</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
